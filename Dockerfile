@@ -1,6 +1,5 @@
 FROM alpine:latest
 EXPOSE 13000
-# COPY ./dotnet-sdk-2.2.402-linux-musl-x64 /bin/dotnet-sdk
 RUN apk add libstdc++ \
     && apk add icu-libs \
     && apk add libintl \
