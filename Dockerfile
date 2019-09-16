@@ -1,5 +1,4 @@
 FROM alpine:latest
-EXPOSE 13000
 RUN apk add libstdc++ \
     && apk add icu-libs \
     && apk add libintl \
