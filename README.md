@@ -2,25 +2,29 @@
 
 Alpine image with netcore installed.
 
-To use it create a dotnet-dll.yml with like this:
+## Example with `docker-compose`
 
+1. Create a folder in `/var/dotnet-volume` with the .NET files.
+2. Create a file named **dotnet-dll.yml**
 ```yml
 version: "3.7"
 services:
     dotnet-svc:
         image: appfeel/alpine-netcore:latest
-        volumes: /var/dotnet-volume:/mnt/dll
-        working_dir: /mnt/dll
+        working_dir: "/mnt/dll"
         command: "/bin/dotnet-sdk/dotnet mydll.dll"
+        volumes: /var/dotnet-volume:/mnt/dll
 ```
-
-This configuration assumes that you have your dll files inside a folder named `/var/dotnet-volume` in your host machine. To wake up your dll run from command line:
-
+3. Run `docker-compose`:
 ```bash
 docker-compose dotnet-dll.yml up
 ```
 
-And voilà! You'll have your Microsoft .NET application running inside docker.
+## Example with `docker` cli:
+
+```bash
+docker run -d --name dotnet_svc_1 -v /var/dotnet-volume:/mnt/dll
+```
 
 # LICENSE
 
