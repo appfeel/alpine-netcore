@@ -6,22 +6,19 @@ Alpine image with netcore installed.
 
 1. Create a folder in `/var/dotnet-volume` with the .NET files.
 2. Create a file named **dotnet-dll.yml**
-
-```yml
-version: "3.7"
-services:
-    dotnet-svc:
-        image: appfeel/alpine-netcore:latest
-        working_dir: "/mnt/dll"
-        command: "/bin/dotnet-sdk/dotnet mydll.dll"
-        volumes: /var/dotnet-volume:/mnt/dll
-```
-
+    ```yml
+    version: "3.7"
+    services:
+        dotnet-svc:
+            image: appfeel/alpine-netcore:latest
+            working_dir: "/mnt/dll"
+            command: "/bin/dotnet-sdk/dotnet mydll.dll"
+            volumes: /var/dotnet-volume:/mnt/dll
+    ```
 3. Run `docker-compose`:
-
-```bash
-docker-compose dotnet-dll.yml up
-```
+    ```bash
+    docker-compose dotnet-dll.yml up
+    ```
 
 ## Example with `docker` cli:
 
