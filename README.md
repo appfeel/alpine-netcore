@@ -2,7 +2,7 @@
 
 Alpine image with netcore installed.
 
-## Example with `docker-compose`
+### Example with `docker-compose`
 
 1. Create a folder in `/var/dotnet-volume` with the .NET files.
 2. Create a file named **dotnet-dll.yml**
@@ -22,7 +22,7 @@ Alpine image with netcore installed.
         docker-compose dotnet-dll.yml up
         ```
 
-## Example with `docker` cli:
+### Example with `docker`
 
 ```bash
 docker run -d --name dotnet_svc_1 -v /var/dotnet-volume:/mnt/dll
