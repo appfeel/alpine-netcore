@@ -30,7 +30,7 @@ docker run -d --name dotnet_svc_1 -v /var/dotnet-volume:/mnt/dll
 
 # LICENSE
 
-```
+```bash
 The MIT License (MIT)
 
 Copyright (c) 2019 AppFeel
